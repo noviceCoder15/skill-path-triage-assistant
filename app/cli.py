@@ -149,6 +149,22 @@ def cmd_gaps(a):
     for g in gaps:
         print(f"  {g['token'].split(':', 1)[1]:24s} {g['members']:3d} of {len(team)} members ({g['share']:.0%})")
 
+def cmd_hello(_=None):
+    d = _dir()
+    steps = [("company.csv", "generate-data", "employee histories"),
+             ("lm_continued.npz", "train", "trained language model")]
+    print("Skill Path Triage Assistant is ready.")
+    print(f"Data folder: {d}/")
+    missing = None
+    for fname, command, label in steps:
+        ok = (d / fname).exists()
+        print(f"  [{'x' if ok else ' '}] {label}")
+        if not ok and missing is None:
+            missing = command
+    if missing:
+        print(f"\nNext step: python -m app.cli {missing}   (full order: generate-data, mine, train, evaluate)")
+    else:
+        print('\nTry: python -m app.cli suggest --department Data --skills "SQL,Python"')
 
 def main(argv: list[str] | None = None) -> None:
     p = argparse.ArgumentParser(prog="skill-path-triage-assistant",
@@ -203,10 +219,9 @@ def main(argv: list[str] | None = None) -> None:
 
     args = p.parse_args(argv)
     if args.command == "hello":
-        print("Skill Path Triage Assistant is ready. Open README.md for your milestones.")
+        cmd_hello()
     else:
         args.fn(args)
-
 
 if __name__ == "__main__":
     main()

@@ -87,9 +87,9 @@ How to read this honestly:
 
 ## Known limitations
 
-- `thilimarketbasket` is listed in `requirements.txt` but is **not used**: it could not be installed or inspected when
-  this was built, so M2 uses self-contained Apriori/sequential-pattern code. If that git URL is not reachable, remove the
-  line or `pip install` and CI will fail.
+- The brief names `thilimarketbasket`, but it could not be found or inspected, so it is **not** a dependency.
+  Milestone 2 uses self-contained Apriori and sequential-pattern code in `app/core.py`. If you have access to the
+  package, it can be added as a cross-check against `mine_itemsets` and `mine_transitions`.
 - The LM is a from-scratch numpy model, not a pretrained text LM; "continued pretraining" means pretrain then keep
   training the same weights on the company corpus.
 - Evaluation covers relevance, breadth and diversity, but there is no human judgement of whether a suggestion is useful.
