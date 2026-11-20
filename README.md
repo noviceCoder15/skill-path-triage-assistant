@@ -1,6 +1,6 @@
 # Skill Path Triage Assistant
 
-[![Built with askThili](https://ask.thili.ai/api/v1/public/projects/et82vbu3pf/badge.svg)](https://ask.thili.ai/b/et82vbu3pf)
+[![Built with askThili](https://msrit.ask.thili.ai/api/v1/public/projects/et82vbu3pf/badge.svg)](https://msrit.ask.thili.ai/b/et82vbu3pf)
 
 The Skill Path Triage Assistant helps HR managers understand and guide employee career progression. By analyzing historical sequences of acquired skills and job roles, it identifies common career paths and predicts likely next skills or roles, streamlining training recommendations and addressing skill gaps within the HR & Hiring domain.
 
